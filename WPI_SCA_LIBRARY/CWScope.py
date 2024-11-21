@@ -3,7 +3,7 @@ from __future__ import annotations
 import shutil
 
 import chipwhisperer as cw
-import cwtvla.ktp
+import WPI_SCA_LIBRARY.cwtvla.ktp as cwtvlaktp
 import numpy as np
 from WPI_SCA_LIBRARY.FileFormat import *
 import os
@@ -133,7 +133,7 @@ class CWScope:
 
     def capture_traces_tvla(self, num_traces: int, group_a_keys: list = None, group_a_texts: list= None,
                             group_b_keys: list = None, group_b_texts: list = None,
-                            ktp: any = cwtvla.ktp.FixedVRandomText()) -> (np.ndarray, np.ndarray):
+                            ktp: any = cwtvlaktp.FixedVRandomText()) -> (np.ndarray, np.ndarray):
         """
         Captures fixed and random trace set needed for TVLA.
         :param num_traces: The number of traces to capture for each set
