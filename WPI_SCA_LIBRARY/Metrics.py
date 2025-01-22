@@ -77,13 +77,12 @@ def organize_snr_label(traces: np.ndarray, intermediate_fcn: Callable, *args: an
     """
     intermediate_values = intermediate_fcn(*args)
     labelsUnique = np.unique(intermediate_values)
-
     sorted_labels = {}
     for i in labelsUnique:
         sorted_labels[i] = []
 
     for index, label in enumerate(intermediate_values):
-        sorted_labels[label].append(np.array(traces[index]))
+        sorted_labels[label[0]].append(np.array(traces[index]))
 
     return sorted_labels
 
